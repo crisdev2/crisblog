@@ -8,9 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "develop": "npx -n \"-r dotenv/config\" gatsby develop",
+    "start": "npx -n \"-r dotenv/config\" gatsby develop",
+    "build": "npx -n \"-r dotenv/config\" gatsby build",
+    "deploy": "npx -n \"-r dotenv/config\" gatsby-plugin-s3 deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
@@ -23,6 +24,7 @@
     "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.3",
     "babel-plugin-styled-components": "^2.0.7",
+    "dotenv": "^16.0.1",
     "gatsby": "^4.16.0",
     "gatsby-plugin-google-analytics": "^4.16.0",
     "gatsby-plugin-image": "^2.16.1",
@@ -30,6 +32,7 @@
     "gatsby-plugin-material-ui": "^4.0.2",
     "gatsby-plugin-mdx": "^3.16.1",
     "gatsby-plugin-react-helmet": "^5.16.0",
+    "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "^4.16.1",
     "gatsby-plugin-sitemap": "^5.16.0",
     "gatsby-plugin-styled-components": "^5.16.0",

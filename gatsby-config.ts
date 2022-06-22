@@ -1,9 +1,10 @@
+import "dotenv/config";
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Cris's Blog`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.crisdev.rocks`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -41,7 +42,19 @@ const config: GatsbyConfig = {
     },
     {
       resolve: "gatsby-plugin-material-ui"
-    }
+    },
+    {
+      resolve: "gatsby-plugin-s3",
+      options: {
+        bucketName: process.env.AWS_BUCKET_NAME,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: process.env.GA_TRAKING_ID,
+      },
+    },
   ]
 };
 
